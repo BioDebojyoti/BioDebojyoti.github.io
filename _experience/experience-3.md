@@ -10,8 +10,8 @@ location: "Umeå, Sweden"
 
  
 Department of Molecular Biology  
-Molecular Infections Medicine Sweden (MIMS)  
-Umeå University, Umeå, Sweden  
+[Molecular Infections Medicine Sweden (MIMS)](https://www.umu.se/mims/)  
+[Umeå University](https://www.umu.se/), Umeå, Sweden  
 Jan. 2020 ‑ Dec. 2021  
 
 * Single‑cell RNA‑seq data analysis of SARS‑CoV‑2 data [mBio](https://journals.asm.org/doi/pdf/10.1128/mbio.00892-22)  

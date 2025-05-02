@@ -9,23 +9,25 @@ redirect_from:
 
 {% include base_path %}
 
-* **Ph.D. in Science, 2015** \
+* **Ph.D. in Science 2015** \
   Department of Physical Chemistry, \
-  Indian Association for the Cultivation of Science, Kolkata, India \
+  [Indian Association for the Cultivation of Science, Kolkata, India](https://www.iacs.res.in/) \
   (Degree Awarded: Jadavpur University) 
   
 
-* **M.Sc., 2010** \
+* **M.Sc. 2010**    
+  *<font color="#ed944d">First Class</font>*  
   *Physical Chemistry Specialization* \
   Department of Chemistry, \
-  Jadavpur University, Kolkata, India 
+  [Jadavpur University](https://jadavpuruniversity.in/), Kolkata, India 
 
 
-* **B.Sc., 2008** \
+* **B.Sc. 2008**  \
+  *<font color="#ed944d">First Class with Distinction</font>*  
   *Chemistry (Major)* \
   *Physics, Mathematics, Computer Programming (Minor)* \
   Department of Chemistry, \
-  Jadavpur University, Kolkata, India
+  [Jadavpur University](https://jadavpuruniversity.in/), Kolkata, India
 
 # Honors & Fellowships
 

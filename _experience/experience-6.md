@@ -8,10 +8,10 @@ permalink: /experience/experience-6
 location: "Linköping, Sweden"
 ---
 
-Clinical Genomics Linköping  
+[Clinical Genomics Linköping](https://www.scilifelab.se/units/clinical-genomics-linkoping/)  
 &  
 Department of Biomedical and Clinical Sciences  
-Linköping University, Linköping, Sweden  
+[Linköping University](https://liu.se/en), Linköping, Sweden  
 Jun. 2024 ‑ May. 2025  
 
 

@@ -10,7 +10,7 @@ location: "Grand Forks, ND, USA"
 
 
 Department of Biology  
-University of North Dakota, Grand Forks, ND, USA    
+[University of North Dakota](https://arts-sciences.und.edu/academics/biology/index.html), Grand Forks, ND, USA    
 Sep. 2017 ‑ Oct. 2019
 
 *de novo assembly and annotation of a non‑model species, the Common snapping turtle* [G3: Genes | Genomes | Genetics](https://doi.org/10.1534/g3.120.401440)  
