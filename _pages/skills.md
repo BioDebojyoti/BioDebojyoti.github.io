@@ -44,6 +44,18 @@ redirect_from:
 ![High-Throughput Sequencing](https://img.shields.io/badge/High--Throughput--Seq-1E90FF?style=for-the-badge)
 ![HPC](https://img.shields.io/badge/HPC-003366?style=for-the-badge)
 
+## 🤖 Machine Learning
+
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?logo=scikit-learn&logoColor=white&style=for-the-badge)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white&style=for-the-badge)
+<!-- ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white&style=for-the-badge)
+![XGBoost](https://img.shields.io/badge/XGBoost-0072C6?style=for-the-badge)
+![LightGBM](https://img.shields.io/badge/LightGBM-8BC34A?style=for-the-badge)
+![MLFlow](https://img.shields.io/badge/MLFlow-0194F3?style=for-the-badge) -->
+![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white&style=for-the-badge)
+![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white&style=for-the-badge)
+![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge)
+
 ## 🧮 Mathematical Modeling & Dynamics
 
 ![Deterministic](https://img.shields.io/badge/Deterministic-888888?style=for-the-badge)
@@ -52,7 +64,7 @@ redirect_from:
 
 ## 📈 Statistics
 
-![EDA](https://img.shields.io/badge/EDA-964B00?style=for-the-badge)
+![Exploratory Data Analysis (EDA)](https://img.shields.io/badge/EDA-964B00?style=for-the-badge)
 ![Statistical Modeling](https://img.shields.io/badge/Statistical--Modeling-005F73?style=for-the-badge)
 
 ## 🔄 Workflow Managers
