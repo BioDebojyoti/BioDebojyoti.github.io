@@ -9,7 +9,7 @@ location: "Linköping, Sweden"
 ---
 
 Department of Biomedical and Clinical Sciences  
-Linköping University, Linköping, Sweden  
+[Linköping University](https://liu.se/en), Linköping, Sweden  
 Jan. 2023 ‑ May. 2024  
 
 * Biostatistics to find association of nutrition of children during formative years and developing psoriasis using data from ABIS (All Babies in

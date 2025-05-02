@@ -9,8 +9,8 @@ location: "Umeå, Sweden"
 ---
 
 Department of Molecular Biology  
-Molecular Infections Medicine Sweden (MIMS)  
-Umeå University, Umeå, Sweden  
+[Molecular Infections Medicine Sweden (MIMS)](https://www.umu.se/mims/)  
+[Umeå University](https://www.umu.se/), Umeå, Sweden  
 Jan. 2022 ‑ Dec. 2022
 
 * Bioinformatic analysis of high‑throughput barcode sequencing libraries to phenotype pools of hundreds of gene knock‑out mutants in parallel

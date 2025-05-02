@@ -9,9 +9,9 @@ location: "Cambridge, MA, USA"
 ---
 
 
-*Origins of Life Initaitive*  
+[*Origins of Life Initaitive*](https://origins.harvard.edu/people/debojyoti-das)  
 Department of Earth and Planetary Sciences  
-Harvard University, Cambridge, MA, USA  
+[Harvard University](https://www.harvard.edu/), Cambridge, MA, USA  
 Mar. 2016 ‑ Aug. 2017
 
 *Phenomenological problems associated with oscillatory Belousov‑Zhabotinsky reaction in chemo‑mechanical coupling with polymer vesicles, communication, and adaptation*
