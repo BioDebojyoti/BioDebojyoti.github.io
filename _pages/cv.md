@@ -27,3 +27,14 @@ redirect_from:
   Department of Chemistry, \
   Jadavpur University, Kolkata, India
 
+# Honors & Fellowships
+
+* <font color="orange">GATE 2010</font>  
+**(All India Rank 197)**  
+Graduate Aptitude Test in Engineering *(Chemistry)* India  
+* <font color="orange">CSIR Junior Research Fellowship 2010</font>  
+**(All India Rank 111)**  
+CSIR National Eligibility Test *(Chemical Sciences)* India
+* <font color="orange">CSIR Senior Research Fellowship 2012</font>    
+CSIR National Eligibility Test *(Chemical Sciences)* India
+
