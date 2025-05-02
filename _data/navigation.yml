@@ -11,6 +11,9 @@ main:
   - title: "Education"
     url: /cv/
 
+  - title: "Skills"
+    url: /skills/
+
   - title: "Experience"
     url: /experience/    
     
