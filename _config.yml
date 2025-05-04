@@ -210,6 +210,9 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
 
 
 # These settings control the types of collections used by the template
@@ -223,9 +226,10 @@ collections:
   # portfolio:
   #   output: false
   #   permalink: /:collection/:path/
-  # talks:
-  #   output: false
-  #   permalink: /:collection/:path/
+  tutorials:
+    output: true
+    permalink: /:collection/:path/
+  
 
 
 # These settings control how pages and collections are included in the site
@@ -233,7 +237,7 @@ defaults:
   # _posts
   - scope:
       path: ""
-      type: posts
+      type: tutorials
     values:
       layout: single
       author_profile: true
