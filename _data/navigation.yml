@@ -20,6 +20,9 @@ main:
   - title: "Publications"
     url: /publications/
 
+  - title: "Tutorials"
+    url: /tutorials/
+
   # - title: "Talks"
   #   url: /talks/    
 
