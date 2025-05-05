@@ -14,10 +14,6 @@ codeSnippet:
 
 
 
-
-
-
-
 Generate a volcano plot using
 `ggplot2`!
 
