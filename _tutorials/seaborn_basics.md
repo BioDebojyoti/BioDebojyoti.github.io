@@ -1,6 +1,5 @@
-
 ---
-title: 'Volcano Plot Basics (Python)'
+title: 'Seaborn Basics (Python)'
 date: 2025-05-05
 permalink: /tutorials/seaborn_basics
 tags:
@@ -27,7 +26,7 @@ dataset must include at least three mandatory columns:
 
 Each step is explained in detail, with code chunks for clarity.
 
-## Installing and Importing Required Libraries
+## Installing Required Libraries
 ```python
 import subprocess
 import sys
@@ -49,7 +48,7 @@ for pkg in required_packages:
 
 ```
 
-Import libraries:
+## Import libraries:
 
 ```python
 import os
@@ -58,20 +57,27 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 ```
 
-Setting Up Project Directories
+## Setting Up Project Directories
 ```python
-project_dir = "/Users/debojyoti/Projects/volcano_python"
+project_dir = "/Users/debojyoti/Projects/seaborn_basics"
 data_dir = os.path.join(project_dir, "input_data")
 result_dir = os.path.join(project_dir, "results")
 
 os.makedirs(result_dir, exist_ok=True)
 ```
 
-Reading the input data
+## Reading the input data using pandas
 ```python
 input_file = os.path.join(data_dir, "test_input_file.csv")
 data = pd.read_csv(input_file)
 print(data.head())
+
+#	Gene_symbol log2FC  	neg_log10pval	log2FC_sq	p_value
+# 0	Gene7	2.267283	1.725017	5.140572	0.018836
+# 1	Gene9	3.027636	3.804565	9.166577	0.000157
+# 2	Gene11	1.957304	0.261662	3.831041	0.547442
+# 3	Gene12	3.429968	3.787973	11.764681	0.000163
+# 4	Gene13	-2.083291	3.899395	4.340102	0.000126
 ```
 
 
@@ -91,6 +97,13 @@ choices = ["Upregulated", "Downregulated"]
 data["regulation"] = np.select(conditions, choices, default="Non-significant")
 
 data.head()
+
+#	Gene_symbol log2FC  	neg_log10pval	log2FC_sq	p_value 	logP    	negLog2FC	regulation
+# 0	Gene7	   2.267283	1.725017	5.140572	0.018836	1.725017	-2.267283	Downregulated
+# 1	Gene9	   3.027636	3.804565	9.166577	0.000157	3.804565	-3.027636	Downregulated
+# 2	Gene11	   1.957304	0.261662	3.831041	0.547442	0.261662	-1.957304	Non-significant
+# 3	Gene12	   3.429968	3.787973	11.764681	0.000163	3.787973	-3.429968	Downregulated
+# 4	Gene13	   -2.083291	3.899395	4.340102	0.000126	3.899395	2.083291	Upregulated
 ```
 
 ## Selecting Top Genes for Labeling
@@ -103,7 +116,13 @@ top_genes = pd.concat([top_up, top_down])
 # Set the display width to a larger value, e.g., 1000 characters
 pd.set_option('display.width', 120)
 
-print(top_genes.head())
+top_genes.head()
+#	Gene_symbol log2FC neg_log10pval   log2FC_sq  p_value     logP   negLog2FC	regulation
+# 2440  Gene6948   -6.064915   2.122147  36.783188  0.007548  2.122147   6.064915      Upregulated
+# 1724  Gene4951   -4.996103   4.636459  24.961045  0.000023  4.636459   4.996103      Upregulated
+#  900  Gene2644   -4.799338   2.081537  23.033642  0.008288  2.081537   4.799338      Upregulated
+# 1002  Gene2924   -4.771924   3.505065  22.771257  0.000313  3.505065   4.771924      Upregulated
+# 1326  Gene3821   -4.708490   2.552914  22.169875  0.002800  2.552914   4.708490      Upregulated
 ```
 
 ## Creating the Volcano Plot
@@ -122,7 +141,7 @@ plt.title("Volcano Plot")
 plt.xlabel("-Log2 Fold Change")
 plt.ylabel("-Log10 P-value")
 plt.ylim(0, 6)
-plt.legend(title="", loc="upper left")
+plt.legend(title="regulation")
 plt.tight_layout()
 plt.show()
 ```
@@ -145,6 +164,8 @@ Inside the plot (default locations):
 output_file = os.path.join(result_dir, "volcano_plot.png")
 plt.savefig(output_file)
 print(f"Plot saved to: {output_file}")
+# Plot saved to: /Users/debojyoti/Projects/seaborn_basics/results/volcano_plot.png
+<Figure size 640x480 with 0 Axes>
 ```
 
 ## Conclusion
