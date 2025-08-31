@@ -86,6 +86,7 @@ redirect_from:
 
 ![Shiny](https://img.shields.io/badge/Shiny-006CAB?logo=r&logoColor=white&style=for-the-badge)
 ![Dash](https://img.shields.io/badge/Dash-0175C2?logo=plotly&logoColor=white&style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/Streamlit-%23FE4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white)
 
 ## 🧵 Job Scheduling
 
