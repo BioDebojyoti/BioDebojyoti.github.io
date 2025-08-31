@@ -159,3 +159,16 @@
     </ul>
   </div>
 </div>
+
+<hr />
+<h3>News</h3>
+<ul class="news-list">
+  {% assign news_items = site.data.news | reverse %}
+  {% for item in news_items %}
+    <li>
+      <a href="{{ item.url }}" target="_blank" rel="noopener">
+        {{ item.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
