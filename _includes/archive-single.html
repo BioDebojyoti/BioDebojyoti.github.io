@@ -82,6 +82,45 @@
 
 {% if post.doi %}
 <script>
+(function() {
+  const doi = "{{ post.doi }}";
+  const el = document.getElementById("citation-count-{{ post.doi | slugify }}");
+  if (!doi || !el) return;
+
+  const ssUrl = `https://api.semanticscholar.org/graph/v1/paper/DOI:${doi}?fields=citationCount`;
+  const ocUrl = `https://api.opencitations.net/index/v1/citations/${doi}`;
+
+  function getOCCitationCount(data) {
+    return Array.isArray(data) ? data.length : 0;
+  }
+
+  Promise.allSettled([
+    fetch(ssUrl).then(r => r.json()),
+    fetch(ocUrl).then(r => r.json())
+  ]).then(results => {
+    let ssCount = 0, ocCount = 0;
+
+    if (results[0].status === "fulfilled" && results[0].value.citationCount !== undefined) {
+      ssCount = results[0].value.citationCount;
+    }
+    if (results[1].status === "fulfilled") {
+      ocCount = getOCCitationCount(results[1].value);
+    }
+
+    const finalCount = Math.max(ssCount, ocCount);
+
+    if (finalCount > 0) {
+      el.textContent = ` (Citations ${finalCount})`;
+    } else {
+      el.textContent = " (Citation unavailable)";
+    }
+  }).catch(err => {
+    console.error("Citation API error:", err);
+    el.textContent = " (Citation unavailable)";
+  });
+})();
+</script>
+<!-- <script>
   (function() {
     const doi = "{{ post.doi }}";
     const el = document.getElementById("citation-count-{{ post.doi | slugify }}");
@@ -99,7 +138,7 @@
         el.textContent = " (Citation data unavailable)";
       });
   })();
-</script>
+</script> -->
 {% endif %}
 
 
