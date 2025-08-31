@@ -7,14 +7,16 @@ redirect_from:
   - /about.html
 ---
 
-I am working as a principal research engineer in the Department of Biomedical and Clinical Sciences, at Linkoping University & Clinical Genomics Linkoping, SciLifeLab. 
+I am working as a researcher in the Department of Biomedical and Clinical Sciences, at Linkoping University & Clinical Genomics Linkoping, SciLifeLab. 
 
 **Workflow pipeline development:**
 
 I am passionate about development of bioinformatic pipelines for analyzing next-generation sequence data. Recent work includes a
 snakemake pipeline for  single cell rna-seq data (10X Genomics) analysis [https://doi.org/10.5281/zenodo.15090341](https://doi.org/10.5281/zenodo.15090341). I also routinely use Nextflow pipelines for bulk transcriptomics data analysis.
+
+I am also refactored and configured the nanoDx pipeline to support local infrastructure, with a customized version of [nanoDx](https://github.com/BioDebojyoti/nanoDx_modified), a pre-trained neural network model for DNA methylation‑based tumour classification using nanopore whole genome sequencing data.
  
-I love creating Shiny apps for analysis and visualization. Two recent shiny applications that I developed recently are: 
+I love creating Shiny apps for analysis and visualization. Two recent shiny applications that I developed are: 
 * [https://completeolink.serve.scilifelab.se](https://completeolink.serve.scilifelab.se) \
   for end-to-end solution for OLINK (proteomics) data analysis 
 * [https://enrichedmassspec.serve.scilifelab.se](https://enrichedmassspec.serve.scilifelab.se) \
