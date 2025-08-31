@@ -41,3 +41,46 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
+
+/* === Publication thumbnails and citation styling === */
+.pub-flex-container {
+  display: flex;
+  align-items: flex-start;  // image top aligns with text top
+  gap: 15px;
+  margin-bottom: 10px;      // adds spacing between publications
+
+}
+
+.pub-image-container {
+  flex: 0 0 auto;   // keeps image at natural size
+}
+
+.pub-cover-full {
+  height: auto;
+  max-height: 300px;      // adjust based on your preferred max
+  width: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.pub-text-container {
+  flex: 1 1 auto;   // text takes remaining width
+}
+
+// .pub-cover {
+//   flex-shrink: 0;
+//   display: inline-block;
+//   max-height: 200px;   /* was 60px */
+//   max-width: 200px;   /* was 60px */
+//   // width: auto;
+//   margin: 0;
+//   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+// }
+
+
+.no-doi {
+  color: #999;
+  font-style: italic;
+  font-size: 0.9em;
+}
