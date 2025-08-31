@@ -34,10 +34,12 @@
           <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
         {% endif %}
 
-        {% if post.doi %}
+        {% if post.collection == 'publications' and post.doi %}
           <span id="citation-count-{{ post.doi | slugify }}"></span>
         {% else %}
-          <span class="no-doi">(No DOI available)</span>
+          {% if post.collection == 'publications' %}
+            <span class="no-doi">(No DOI available)</span>
+          {% endif %}
         {% endif %}
       </h2>
 
