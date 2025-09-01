@@ -58,7 +58,7 @@
 .pub-cover-full {
   height: auto;
   max-height: 300px;      // adjust based on your preferred max
-  width: auto;
+  width: 200px;;
   display: block;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -67,16 +67,6 @@
 .pub-text-container {
   flex: 1 1 auto;   // text takes remaining width
 }
-
-// .pub-cover {
-//   flex-shrink: 0;
-//   display: inline-block;
-//   max-height: 200px;   /* was 60px */
-//   max-width: 200px;   /* was 60px */
-//   // width: auto;
-//   margin: 0;
-//   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-// }
 
 
 .no-doi {
