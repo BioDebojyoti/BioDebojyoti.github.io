@@ -45,8 +45,8 @@
 /* === Publication thumbnails and citation styling === */
 .pub-flex-container {
   display: flex;
-  align-items: flex-start;  // image top aligns with text top
-  gap: 15px;
+  align-items: center; // image top aligns with text top
+  gap: 10px;
   margin-bottom: 10px;      // adds spacing between publications
 
 }
