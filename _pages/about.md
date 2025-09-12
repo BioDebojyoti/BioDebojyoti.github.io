@@ -12,20 +12,28 @@ I am working as a researcher in the Department of Biomedical and Clinical Scienc
 **Workflow pipeline development:**
 
 I am passionate about development of bioinformatic pipelines for analyzing next-generation sequence data. Recent work includes a
-snakemake pipeline for  single cell rna-seq data (10X Genomics) analysis [https://doi.org/10.5281/zenodo.15090341](https://doi.org/10.5281/zenodo.15090341). I also routinely use Nextflow pipelines for bulk transcriptomics data analysis.
+snakemake pipeline for  single cell rna-seq data (10X Genomics) analysis [cellranger_snakemake](https://doi.org/10.5281/zenodo.15090341). I also routinely use Nextflow pipelines for bulk transcriptomics data analysis.
 
-I also refactored and configured the nanoDx pipeline to support local infrastructure, with a customized version of [nanoDx](https://github.com/BioDebojyoti/nanoDx_modified), a pre-trained neural network model for DNA methylation‑based tumour classification using nanopore whole genome sequencing data.
+I also refactored and configured the nanoDx pipeline to support local infrastructure, with a customized version of [nanoDx_modified](https://github.com/BioDebojyoti/nanoDx_modified), a pre-trained neural network model for DNA methylation‑based tumour classification using nanopore whole genome sequencing data.
  
 I love creating Shiny apps for analysis and visualization. Two recent shiny applications that I developed are: 
-* [https://completeolink.serve.scilifelab.se](https://completeolink.serve.scilifelab.se) \
+* [completeOlink](https://completeolink.serve.scilifelab.se) \
   for end-to-end solution for OLINK (proteomics) data analysis 
-* [https://enrichedmassspec.serve.scilifelab.se](https://enrichedmassspec.serve.scilifelab.se) \
+* [enrichedmassspec](https://enrichedmassspec.serve.scilifelab.se) \
   for downstream analysis of differentially expressed protein in Mass Spectrometry data (from Spectronaut software) – visualization, and enrichment analysis
 
 
 **Epidemiology & Biostatistics:**
 
-I have extensive experience working on registry-based cohort data. I have worked on a gigantic birth cohort (All Babies in Southeast Sweden, ABIS), and used methods of biostatistics to elucidate environmental, genetic, and immunological factors that increase the risk of developing auto-immune diseases.
+I have extensive experience working on registry-based cohort data. I have worked on a gigantic birth cohort (All Babies in Southeast Sweden, ABIS), and used methods of biostatistics to elucidate environmental, genetic, and immunological factors that increase the risk of developing auto-immune diseases. Three publications have resulted from these projects and a couple of manuscripts are under preparation.
+<div class="pub-highlight">
+  <p>One being selected as an Editor's choice & Cover Image for the issue!</p>
+  <div class="pub-image-container">
+    <a href="images/resized/bjd1.png" class="image-popup">
+      <img src="images/resized/bjd1.png" alt="Cover image" style="height:250px; width:300px;" class="pub-cover-full">
+    </a>
+  </div>
+</div>
 
 **Genome Assembly:**
 
@@ -36,4 +44,4 @@ Over the years, I have gained considerable hands-on experience in handling large
 To summarise, the focus of my research these days have been: 
 
 *	Analysis of high-throughput datasets that provide insights into disease pathogenesis and biological realm in general. 
-*	Biostatistics of Epidemiological data
+*	Statistical analysis of Epidemiological data
