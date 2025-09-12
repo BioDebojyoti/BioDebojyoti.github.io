@@ -17,7 +17,9 @@
 
     {% if post.image %}
       <div class="pub-image-container">
-        <img src="{{ post.image | relative_url }}" alt="Cover image" class="pub-cover-full">
+            <a href="{{ post.image | relative_url }}" class="image-popup">
+              <img src="{{ post.image | relative_url }}" alt="Cover image" class="pub-cover-full">
+            </a>
       </div>
     {% endif %}
 
@@ -120,6 +122,7 @@
   });
 })();
 </script>
+
 <!-- <script>
   (function() {
     const doi = "{{ post.doi }}";
