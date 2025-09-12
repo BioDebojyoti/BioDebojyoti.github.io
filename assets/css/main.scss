@@ -52,25 +52,39 @@
 }
 
 .pub-image-container {
-  flex: 0 0 auto;   // keeps image at natural size
+    flex:0 0 auto;
+    padding: 10px;
 }
 
 .pub-cover-full {
-  height: auto;
-  max-height: 300px;      // adjust based on your preferred max
-  width: 200px;;
-  display: block;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    height: 200px;
+    width: 200px;
+    display: block;
+    border-radius: 6px;
+    box-shadow:0 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 5px;
 }
 
 .pub-text-container {
-  flex: 1 1 auto;   // text takes remaining width
+    flex:1 1 auto;
+    padding-left: 25px;
 }
+
 
 
 .no-doi {
   color: #999;
   font-style: italic;
   font-size: 0.9em;
+}
+
+
+/* Zoom cursor and subtle hover effect for all publication images */
+.zoom-image img {
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.zoom-image img:hover {
+  transform: scale(1.02);
 }
