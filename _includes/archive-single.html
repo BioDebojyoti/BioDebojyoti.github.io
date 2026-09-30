@@ -1,11 +1,5 @@
 {% include base_path %}
 
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% else %}
-  {% assign teaser = site.teaser %}
-{% endif %}
-
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
@@ -17,9 +11,9 @@
 
     {% if post.image %}
       <div class="pub-image-container">
-            <a href="{{ post.image | relative_url }}" class="image-popup">
-              <img src="{{ post.image | relative_url }}" alt="Cover image" class="pub-cover-full">
-            </a>
+        <a href="{{ post.image | relative_url }}" class="image-popup">
+          <img src="{{ post.image | relative_url }}" alt="Cover image" class="pub-cover-full">
+        </a>
       </div>
     {% endif %}
 
@@ -27,21 +21,13 @@
 
       <h2 class="archive__item-title" itemprop="headline">
         {% if post.link %}
-          <a href="{{ post.link }}">{{ title }}</a> 
+          <a href="{{ post.link }}">{{ title }}</a>
           <a href="{{ base_path }}{{ post.url }}" rel="permalink">
             <i class="fa fa-link" aria-hidden="true" title="permalink"></i>
             <span class="sr-only">Permalink</span>
           </a>
         {% else %}
           <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-        {% endif %}
-
-        {% if post.collection == 'publications' and post.doi %}
-          <span id="citation-count-{{ post.doi | slugify }}"></span>
-        {% else %}
-          {% if post.collection == 'publications' %}
-            <span class="no-doi">(No DOI available)</span>
-          {% endif %}
         {% endif %}
       </h2>
 
@@ -79,154 +65,20 @@
 
     </div> <!-- /.pub-text-container -->
 
-  </article>
-</div>
-
-{% if post.doi %}
-<script>
-(function() {
-  const doi = "{{ post.doi }}";
-  const el = document.getElementById("citation-count-{{ post.doi | slugify }}");
-  if (!doi || !el) return;
-
-  const ssUrl = `https://api.semanticscholar.org/graph/v1/paper/DOI:${doi}?fields=citationCount`;
-  const ocUrl = `https://api.opencitations.net/index/v1/citations/${doi}`;
-
-  function getOCCitationCount(data) {
-    return Array.isArray(data) ? data.length : 0;
-  }
-
-  Promise.allSettled([
-    fetch(ssUrl).then(r => r.json()),
-    fetch(ocUrl).then(r => r.json())
-  ]).then(results => {
-    let ssCount = 0, ocCount = 0;
-
-    if (results[0].status === "fulfilled" && results[0].value.citationCount !== undefined) {
-      ssCount = results[0].value.citationCount;
-    }
-    if (results[1].status === "fulfilled") {
-      ocCount = getOCCitationCount(results[1].value);
-    }
-
-    const finalCount = Math.max(ssCount, ocCount);
-
-    if (finalCount > 0) {
-      el.textContent = ` (Citations ${finalCount})`;
-    } else {
-      el.textContent = " (Citation unavailable)";
-    }
-  }).catch(err => {
-    console.error("Citation API error:", err);
-    el.textContent = " (Citation unavailable)";
-  });
-})();
-</script>
-
-<!-- <script>
-  (function() {
-    const doi = "{{ post.doi }}";
-    const el = document.getElementById("citation-count-{{ post.doi | slugify }}");
-    fetch(`https://api.semanticscholar.org/graph/v1/paper/DOI:${doi}?fields=citationCount`)
-      .then(res => res.json())
-      .then(data => {
-        if (data.citationCount !== undefined) {
-          el.textContent = ` (Citations ${data.citationCount})`;
-        } else {
-          el.textContent = " (Citation data unavailable)";
-        }
-      })
-      .catch(err => {
-        console.error("Citation API error:", err);
-        el.textContent = " (Citation data unavailable)";
-      });
-  })();
-</script> -->
-{% endif %}
-
-
-
-<!-- {% include base_path %}
-
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% else %}
-  {% assign teaser = site.teaser %}
-{% endif %}
-
-{% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-{% else %}
-  {% assign title = post.title %}
-{% endif %}
-
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
+    {% if post.collection == 'publications' and post.doi %}
+      <div class="pub-metrics-container">
+        <span class="__dimensions_badge_embed__"
+              data-doi="{{ post.doi }}"
+              data-style="large_rectangle"
+              data-legend="hover-left"
+              data-hide-zero-citations="true"></span>
+        <div class="altmetric-embed"
+             data-badge-type="large-donut"
+             data-badge-popover="left"
+             data-doi="{{ post.doi }}"
+             data-hide-no-mentions="true"></div>
       </div>
     {% endif %}
 
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h2>
-    
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-
-        {% if post.collection == 'teaching' %}
-          <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.collection == 'publications' %}
-          <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.date %}
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
-        {% endif %}
-
-    {% if post.excerpt and site.read_more != 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
-    {% endif %}
-    
-    {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.paperurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.citation and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl}}">Download Bibtex</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }}</p>
-    {% elsif post.paperurl and post.bibtexurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.paperurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a></p>
-    {% elsif post.slidesurl and post.bibtexurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.bibtexurl %}
-      <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% endif %}
-
   </article>
-</div> -->
+</div>
