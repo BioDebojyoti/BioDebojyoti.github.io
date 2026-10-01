@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am working as a researcher in the Department of Biomedical and Clinical Sciences, at Linkoping University & Clinical Genomics Linkoping, SciLifeLab. 
+I am working as a researcher in the Department of Biomedical and Clinical Sciences, at Linkoping University. 
 
 **Workflow pipeline development:**
 
